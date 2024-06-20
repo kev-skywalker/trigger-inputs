@@ -32,21 +32,21 @@ jobs:
     build-and-deploy:
         runs-on: ubuntu-latest
         steps:
-            # Get inputs from workflow_Dispatch
-            - name: Print workflow inputs
-              run: |
-                echo "Run tests: ${{ inputs.run-tests }}"
-                echo "Test type: ${{ inputs.test-type }}"
-                echo "Environment: ${{ inputs.environment }}"
-                echo "Build number: ${{ inputs.build-number }}"
-                echo "Message: ${{ inputs.message }}"
+        # Get inputs from workflow_Dispatch
+        - name: Print workflow inputs
+            run: |
+            echo "Run tests: ${{ inputs.run-tests }}"
+            echo "Test type: ${{ inputs.test-type }}"
+            echo "Environment: ${{ inputs.environment }}"
+            echo "Build number: ${{ inputs.build-number }}"
+            echo "Message: ${{ inputs.message }}"
 
-            # Perform actions based on inputs
-            - name: Run tests (if selected)
-            if: ${{ inputs.run-tests == 'true' }}
-            run: echo "Testing......."
+        # Perform actions based on inputs
+        - name: Run tests (if selected)
+        if: ${{ inputs.run-tests == 'true' }}
+        run: echo "Testing......."
 
-            # Deploy to the chosen environment
-            # - name: Deploy to ${{ inputs.environment }}
-            #   environment: ${{ inputs.environment}}
-            # ... steps for deployment based on environment
+        # Deploy to the chosen environment
+        # - name: Deploy to ${{ inputs.environment }}
+        #   environment: ${{ inputs.environment}}
+        # ... steps for deployment based on environment
