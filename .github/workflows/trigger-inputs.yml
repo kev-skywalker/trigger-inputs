@@ -19,7 +19,7 @@ on:
             description: "choose an environment"
             required: true
             type: environment
-        buid-number:
+        build-number:
             description: "custom buid number"
             type: number
             required: false
