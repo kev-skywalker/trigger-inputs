@@ -34,7 +34,7 @@ jobs:
         steps:
         # Get inputs from workflow_Dispatch
         - name: Print workflow inputs
-            run: |
+          run: |
             echo "Run tests: ${{ inputs.run-tests }}"
             echo "Test type: ${{ inputs.test-type }}"
             echo "Environment: ${{ inputs.environment }}"
@@ -43,8 +43,8 @@ jobs:
 
         # Perform actions based on inputs
         - name: Run tests (if selected)
-        if: ${{ inputs.run-tests == 'true' }}
-        run: echo "Testing......."
+          if: ${{ inputs.run-tests == 'true' }}
+          run: echo "Testing......."
 
         # Deploy to the chosen environment
         # - name: Deploy to ${{ inputs.environment }}
